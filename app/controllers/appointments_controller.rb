@@ -13,6 +13,7 @@ class AppointmentsController < ApplicationController
 
   def appointment_params
     params.require(:appointment).permit(
+        :dog_id,
         :appointment_date,
         :location,
         :vet_name

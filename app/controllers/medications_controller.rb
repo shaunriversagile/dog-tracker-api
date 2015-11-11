@@ -12,6 +12,7 @@ class MedicationsController < ApplicationController
 
   def medication_params
     params.require(:medication).permit(
+        :dog_id,
         :name,
         :dose,
         :comment

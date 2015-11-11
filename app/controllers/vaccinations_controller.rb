@@ -11,7 +11,8 @@ class VaccinationsController < ApplicationController
   end
 
   def vaccination_params
-    params.require(:vaccination_params).permit(
+    params.require(:vaccination).permit(
+        :dog_id,
         :name,
         :last,
         :next

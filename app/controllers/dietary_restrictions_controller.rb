@@ -12,6 +12,7 @@ class DietaryRestrictionsController < ApplicationController
 
   def appointment_params
     params.require(:dietary_restriction).permit(
+        :dog_id,
         :food_name,
         :comment
     )
