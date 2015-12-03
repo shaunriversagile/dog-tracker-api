@@ -12,7 +12,7 @@ class AppointmentsController < ApplicationController
   end
 
   def update
-    @appointment = Appointment.find(update_params[:id])
+    @appointment = Appointment.find(params[:id])
     @appointment.update(update_params)
     render json: @appointment
   end
@@ -28,7 +28,6 @@ class AppointmentsController < ApplicationController
 
   def update_params
     params.require(:appointment).permit(
-        :id,
         :appointment_date,
         :location,
         :vet_name

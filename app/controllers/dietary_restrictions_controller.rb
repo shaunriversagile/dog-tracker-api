@@ -11,7 +11,7 @@ class DietaryRestrictionsController < ApplicationController
   end
 
   def update
-    @dietary_restriction = DietaryRestriction.find(update_params[:id])
+    @dietary_restriction = DietaryRestriction.find(params[:id])
     @dietary_restriction.update(update_params)
     render json: @dietary_restriction
   end
@@ -26,7 +26,6 @@ class DietaryRestrictionsController < ApplicationController
 
   def update_params
     params.require(:dietary_restriction).permit(
-        :id,
         :food_name,
         :comment
     )

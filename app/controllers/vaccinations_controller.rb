@@ -11,7 +11,7 @@ class VaccinationsController < ApplicationController
   end
 
   def update
-    @vaccination = Vaccination.find(update_params[:id])
+    @vaccination = Vaccination.find(params[:id])
     @vaccination.update(update_params)
     render json: @vaccination
   end
@@ -27,7 +27,6 @@ class VaccinationsController < ApplicationController
 
   def update_params
     params.require(:vaccination).permit(
-        :id,
         :name,
         :last,
         :next
