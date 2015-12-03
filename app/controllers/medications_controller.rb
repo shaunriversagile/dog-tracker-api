@@ -10,9 +10,24 @@ class MedicationsController < ApplicationController
     render json: @medication
   end
 
+  def update
+    @medication = Medication.find(update_params[:id])
+    @medication.update(update_params)
+    render json: @medication
+  end
+
   def medication_params
     params.require(:medication).permit(
         :dog_id,
+        :name,
+        :dose,
+        :comment
+    )
+  end
+
+  def update_params
+    params.require(:medication).permit(
+        :id,
         :name,
         :dose,
         :comment
