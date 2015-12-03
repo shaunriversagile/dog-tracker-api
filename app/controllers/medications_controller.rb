@@ -11,7 +11,7 @@ class MedicationsController < ApplicationController
   end
 
   def update
-    @medication = Medication.find(update_params[:id])
+    @medication = Medication.find(params[:id])
     @medication.update(update_params)
     render json: @medication
   end
@@ -27,7 +27,6 @@ class MedicationsController < ApplicationController
 
   def update_params
     params.require(:medication).permit(
-        :id,
         :name,
         :dose,
         :comment
